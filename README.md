@@ -22,6 +22,12 @@ Check [latest documentation](http://github.com/buger/goreplay/wiki).
 ## Installation
 Download the latest binary from https://github.com/buger/goreplay/releases or [compile by yourself](https://github.com/buger/goreplay/wiki/Compilation).
 
+### Building Locally
+To create a release compatible for linux distro
+```bash
+make release-bin-linux-amd64
+```
+
 ## Getting started
 
 The most basic setup will be `sudo ./gor --input-raw :8000 --output-stdout` which acts like tcpdump.
