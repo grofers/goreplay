@@ -11,7 +11,7 @@ BENCHMARK = BenchmarkRAWInput
 TEST = TestRawListenerBench
 BIN_NAME = gor
 VERSION := DEV-$(shell date +%s)
-CUSTOM_TAGS := --tags "ngo$(if $(CUSTOM_BUILD_TAGS), $(CUSTOM_BUILD_TAGS),)"
+CUSTOM_TAGS := -buildvcs=false --tags "ngo$(if $(CUSTOM_BUILD_TAGS), $(CUSTOM_BUILD_TAGS),)"
 LDFLAGS = -ldflags "-X main.VERSION=$(VERSION) -extldflags \"-static\" -X main.DEMO=$(DEMO)"
 MAC_LDFLAGS = -ldflags "-X main.VERSION=$(VERSION) -X main.DEMO=$(DEMO)"
 DOCKER_FPM_CMD := docker run --rm -t -v `pwd`:/src -w /src fleetdm/fpm

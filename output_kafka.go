@@ -34,6 +34,7 @@ func NewKafkaOutput(_ string, config *OutputKafkaConfig, tlsConfig *KafkaTLSConf
 		c.Producer.RequiredAcks = sarama.WaitForLocal
 		c.Producer.Compression = sarama.CompressionSnappy
 		c.Producer.Flush.Frequency = KafkaOutputFrequency * time.Millisecond
+		c.Producer.MaxMessageBytes = 8 * 1024 * 1024 // 8 MB
 
 		brokerList := strings.Split(config.Host, ",")
 
